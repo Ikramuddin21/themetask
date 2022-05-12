@@ -1,0 +1,54 @@
+.hero {
+    height: 250px;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(rgba(0, 28, 48, 0.6), rgba(0, 28, 48, 0.6)), url('../../images/hero-banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-form {
+    width: 800px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.input-area {
+    flex-grow: 1;
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.input-area input {
+    width: 90%;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.resources-area {
+    height: 100%;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resources-area svg {
+    width: 25px;
+}
+
+.search-btn {
+    height: 100%;
+    background-color: #0088F2;
+    border: none;
+    width: 90px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}

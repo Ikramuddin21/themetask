@@ -1,0 +1,51 @@
+.header {
+    
+    background-color: black;
+}
+
+nav {
+    max-width: 1500px;
+    height: 65px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-area img {
+    width: 150px;
+    cursor: pointer;
+}
+
+.list-items {
+    display: flex;
+    flex-grow: 1;
+    margin-left: 50px;
+}
+
+.list-items li {
+    list-style: none;
+}
+
+.list-items li a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-size: 15px;
+}
+
+.header-right {
+    display: flex;
+}
+
+.header-right span a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-size: 15px;
+
+}
+
+.header a:hover {
+    color: blue;
+}
