@@ -16,7 +16,7 @@ const Header = () => {
                     <li><a href="#">Game</a></li>
                 </ul>
                 <div className="header-right">
-                    <span><a href="#">Sell Your Content</a></span>
+                    <button className="header-btn">Sell Your Content</button>
                     <span><a href="#">Login</a></span>
 
                 </div>

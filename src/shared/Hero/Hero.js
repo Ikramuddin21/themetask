@@ -19,10 +19,12 @@ const Hero = () => {
                     <div className="input-area">
                         <input type="text" placeholder="Search All Resources" />
                     </div>
+
                     <div className="resources-area">
                         <span>All Resources</span>
                         <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"></path></svg>
                     </div>
+
                     <button className="search-btn" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22.219" height="22.166" viewBox="0 0 22.219 22.166">
                             <g id="search_1_" data-name="search (1)" transform="translate(0 -0.616)">
@@ -41,9 +43,9 @@ const Hero = () => {
                     </button>
                 </form>
                 <div className="popular-keywords">
-                <span>Popular Search : </span>
+                    <span>Popular Search : </span>
                     {
-                        
+
                         popularSearch.map((keyword, index) => keyword.length > 0 && <span key={index} className="keyword">{keyword}</span>)
                     }
                 </div>
