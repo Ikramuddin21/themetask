@@ -1,0 +1,60 @@
+.carousel {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 30px 25px;
+    overflow: hidden;
+}
+
+.carousel h2 {
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+.slick-slide > div {
+    margin: 0 5px;
+}
+
+.slick-arrow {
+    top: 41%;
+    width: 150px;
+    height: 83%;
+    z-index: 9999;
+}
+
+.slick-prev {
+    left: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.slick-next {
+    right:0;
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.slick-prev:hover {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.slick-next:hover {
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 35px;
+    opacity: 1;
+}
+
+.carousel-item {
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+}
+
+.img-area img {
+    width: 100%;
+}
+
+.text-area {
+    padding: 10px 0;
+}
