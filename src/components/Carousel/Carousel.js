@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import cycle from '../images/cycle.jpg';
 import './Carousel.css';
 
 const Carousel = () => {
@@ -15,14 +14,7 @@ const Carousel = () => {
             .then(data => setThemes(data.categories))
     }, []);
 
-    // const settings = {
-    // infinite: true,
-    // slidesToShow: 4,
-    // slidesToScroll: 1,
-    // autoplay: true,
-    // autoplaySpeed: 2000,
-    // pauseOnHover: true
-    // };
+    // carousel settings
     const settings = {
         infinite: true,
         slidesToShow: 4,
@@ -36,7 +28,6 @@ const Carousel = () => {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1,
-                    //   infinite: true
                 }
             },
             {
@@ -44,7 +35,6 @@ const Carousel = () => {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    //   infinite: true
                 }
             },
             {
@@ -56,16 +46,19 @@ const Carousel = () => {
             }
         ]
     };
+
     return (
         <div className="carousel">
             <h2>Popular Album Collection</h2>
-            <Slider {...settings}>
+            {/* react slick slider */}
+            <Slider {...settings} >
                 {
                     themes.map(theme => (
-                        <div className="carousel-item">
+                        <div className="carousel-item" key={theme.id}>
                             <div className="img-area">
-                                <img src={cycle} alt={theme.name} />
+                                <img src={`https://piktask.com/media_images/categories/${theme.thumbnail}`} alt={theme.name} />
                             </div>
+                            
                             <div className="text-area">
                                 <h4>{theme.name}</h4>
                             </div>

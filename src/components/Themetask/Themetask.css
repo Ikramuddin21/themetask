@@ -1,0 +1,17 @@
+.themetask {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.themetask h2 {
+    margin-bottom: 20px;
+}
+
+.themetask-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+}

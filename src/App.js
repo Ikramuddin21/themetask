@@ -1,5 +1,6 @@
 import './App.css';
-import Carousel from './components/Carousel';
+import Carousel from './components/Carousel/Carousel';
+import Themetask from './components/Themetask/Themetask';
 import Footer from './shared/Footer/Footer';
 import Header from './shared/Header/Header';
 import Hero from './shared/Hero/Hero';
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Hero />
       <Carousel />
+      <Themetask />
       <News />
       <Footer />
     </div>

@@ -1,7 +1,9 @@
 .carousel {
     max-width: 1500px;
     margin: 0 auto;
-    padding: 30px 25px;
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
     overflow: hidden;
 }
 
@@ -16,8 +18,8 @@
 
 .slick-arrow {
     top: 41%;
-    width: 150px;
-    height: 83%;
+    width: 100px;
+    height: 82%;
     z-index: 9999;
 }
 
@@ -31,11 +33,13 @@
     background: linear-gradient(-90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
 
-.slick-prev:hover {
+.slick-prev:hover,
+.slick-prev:focus {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
 
-.slick-next:hover {
+.slick-next:hover,
+.slick-next:focus {
     background: linear-gradient(-90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
 
@@ -46,9 +50,14 @@
 }
 
 .carousel-item {
-    text-align: center;
     background-color: white;
     cursor: pointer;
+    max-height: 280px;
+}
+
+.img-area {
+    height: 230px;
+    overflow: hidden;
 }
 
 .img-area img {
@@ -56,5 +65,7 @@
 }
 
 .text-area {
-    padding: 10px 0;
+    height: 50px;
+    display: grid;
+    place-items: center;
 }
