@@ -26,17 +26,17 @@
 
 .footer-menus li:hover {
     color: #0088F2;
+    cursor: pointer;
 }
 
 .footer li {
     list-style: none;
-    cursor: pointer;
 }
 
 .footer-bottom {
     max-width: 1500px;
     margin: 0 auto;
-    padding: 10px 25px;
+    padding: 10px 40px 10px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,17 +44,16 @@
 }
 
 .footer-bottom img {
-    width: 150px;
+    width: 140px;
+    cursor: pointer;
 }
 
 .social-medias {
     display: flex;
 }
 
-.media-icon {
-    background-color: gray;
-    font-size: 30px;
-    margin: 0 5px;
-    padding: 5px;
-    border-radius: 200px;
+.social-medias img {
+    width: 30px;
+    margin: 0 6px;
+    cursor: pointer;
 }

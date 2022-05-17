@@ -4,11 +4,18 @@ import './Hero.css';
 const Hero = () => {
 
     const [popularSearch, setPopularSearch] = useState([]);
+    const [resources, setResources] = useState([]);
 
     useEffect(() => {
         fetch("https://piktask.com/api/client/search/popular_keyword?limit=10")
             .then(res => res.json())
             .then(data => setPopularSearch(data.keywords))
+    }, []);
+
+    useEffect(() => {
+        fetch("https://piktask.com/api/categories?limit=50")
+            .then(res => res.json())
+            .then(data => setResources(data.categories))
     }, []);
 
     return (
@@ -23,6 +30,14 @@ const Hero = () => {
                     <div className="resources-area">
                         <span>All Resources</span>
                         <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"></path></svg>
+
+                        <div className="resources">
+                            <ul>
+                                {
+                                    resources.map(resource => <li key={resource.id}>{resource.name}</li>)
+                                }
+                            </ul>
+                        </div>
                     </div>
 
                     <button className="search-btn" type="submit">

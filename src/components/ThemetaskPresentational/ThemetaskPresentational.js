@@ -5,7 +5,7 @@ import './ThemetaskPresentational.css';
 
 const ThemetaskPresentational = (props) => {
     const { preview, avatar, title,
-        total_download, total_likes, username } = props.themetask;
+        total_download, total_likes, username } = props.theme;
     return (
         <div className="theme-presentational">
             {/* theme image area */}

@@ -6,8 +6,29 @@
     padding-right: 25px;
 }
 
-.themetask h2 {
+.themetask-top-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.themetask-top-area h2 {
     margin-bottom: 20px;
+}
+
+.see-more-btn {
+    background: transparent;
+    width: 80px;
+    height: 25px;
+    border: none;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.see-more-btn:hover {
+    background-color: #0088F2;
+    color: white;
+    cursor: pointer;
 }
 
 .themetask-wrapper {

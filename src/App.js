@@ -1,5 +1,10 @@
 import './App.css';
 import Carousel from './components/Carousel/Carousel';
+import Certificate from './components/Certificate/Certificate';
+import Cryptocurrency from './components/Cryptocurrency/Cryptocurrency';
+import Game from './components/Game/Game';
+import GraphicTemplate from './components/GraphicTemplate/GraphicTemplate';
+import SocialMediaBanner from './components/SocialMediaBanner/SocialMediaBanner';
 import Themetask from './components/Themetask/Themetask';
 import Footer from './shared/Footer/Footer';
 import Header from './shared/Header/Header';
@@ -13,6 +18,11 @@ function App() {
       <Hero />
       <Carousel />
       <Themetask />
+      <SocialMediaBanner />
+      <GraphicTemplate />
+      <Certificate />
+      <Game />
+      <Cryptocurrency />
       <News />
       <Footer />
     </div>

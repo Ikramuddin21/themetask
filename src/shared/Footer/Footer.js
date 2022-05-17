@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaDribbble, FaBehance, FaInstagram, FaFacebookF, FaPinterestP, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import logo from '../../images/logo.png';
+import { socialMedia } from '../../temp/info';
 import './Footer.css';
 
 const Footer = () => {
@@ -52,13 +52,11 @@ const Footer = () => {
                <img src={logo} alt="" />
                <p>copyright &copy; themetask-all right reserved, 2022</p>
                <ul className="social-medias">
-                   <li><FaDribbble className="media-icon" /></li>
-                   <li><FaBehance className="media-icon" /></li>
-                   <li><FaInstagram className="media-icon" /></li>
-                   <li><FaFacebookF className="media-icon" /></li>
-                   <li><FaPinterestP className="media-icon" /></li>
-                   <li><FaLinkedinIn className="media-icon" /></li>
-                   <li><FaYoutube className="media-icon" /></li>
+                  {
+                      socialMedia.map((icon, index) => <li key={index}>
+                          <img className="media-icon" src={icon} alt="icon" />
+                          </li>)
+                  }
                </ul>
            </div>
         </footer>

@@ -1,7 +1,13 @@
 .theme-presentational {
-    width: 325px;
+    max-width: 350px;
+    margin: 0 auto;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: 0.6s;
+}
+
+.theme-presentational:hover {
+    background-color: rgba(233, 230, 230, 0.742);
 }
 
 .theme-img-area {
@@ -36,9 +42,10 @@
     position: absolute;
     left: 90%;
     top: 40px;
-    background-color: #0088F2;
-    fill: white;
+    background-color: white;
+    fill: gray;
     border-radius: 100px;
+    cursor: pointer;
 }
 
 .theme-text-area {
