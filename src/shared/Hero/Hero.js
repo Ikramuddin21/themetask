@@ -5,6 +5,7 @@ const Hero = () => {
 
     const [popularSearch, setPopularSearch] = useState([]);
     const [resources, setResources] = useState([]);
+    const [showResources, setShowResources] = useState(false);
 
     useEffect(() => {
         fetch("https://piktask.com/api/client/search/popular_keyword?limit=10")
@@ -18,9 +19,15 @@ const Hero = () => {
             .then(data => setResources(data.categories))
     }, []);
 
+    // handle resources 
+    const handleResources = () => {
+        console.log('clicked');
+        setShowResources(true);        
+    };
+
     return (
         <div className="hero">
-            <div className="hero-wrapper">
+            <div>
                 <h1 className="hero-title">Graphic Resources for Free Download</h1>
                 <form className="hero-form" action="">
                     <div className="input-area">
@@ -28,10 +35,12 @@ const Hero = () => {
                     </div>
 
                     <div className="resources-area">
-                        <span>All Resources</span>
-                        <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"></path></svg>
+                        <div className="resources-btn" onClick={handleResources}>
+                            <span>All Resources</span>
+                            <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"></path></svg>
+                        </div>
 
-                        <div className="resources">
+                        <div className={`resources ${showResources ? "isShow" : ""}`}>
                             <ul>
                                 {
                                     resources.map(resource => <li key={resource.id}>{resource.name}</li>)

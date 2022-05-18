@@ -1,5 +1,11 @@
 .header {
     background-color: black;
+    z-index: 999999;
+}
+
+.active {
+    position: sticky;
+    top: 0;
 }
 
 nav {

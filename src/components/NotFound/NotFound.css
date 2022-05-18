@@ -1,0 +1,21 @@
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.not-found button {
+    border: none;
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.not-found button:hover {
+    background-color: #0088F2;
+    color: white;
+    cursor: pointer;
+}

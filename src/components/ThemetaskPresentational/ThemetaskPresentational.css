@@ -30,18 +30,18 @@
 }
 
 .icons-hover img {
-    width: 25px;
+    width: 28px;
     position: absolute;
     left: 90%;
     top: 10px;
 }
 
 .icons-hover svg {
-    width: 25px;
-    padding: 3px;
+    width: 28px;
+    padding: 4px;
     position: absolute;
     left: 90%;
-    top: 40px;
+    top: 45px;
     background-color: white;
     fill: gray;
     border-radius: 100px;
