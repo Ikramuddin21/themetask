@@ -9,7 +9,6 @@ const Header = () => {
 
     // handle sticky header
     const handleStickyHeader = () => {
-        console.log(window.scrollY);
         if (window.scrollY > 350) {
             setStickyHeader(true);
         }
@@ -30,15 +29,25 @@ const Header = () => {
                 </div>
 
                 <ul className="list-items">
-                    <li><a href="#">Business Card Mockup</a></li>
-                    <li><a href="#">Text Effect</a></li>
-                    <li><a href="#">Social Media Banner</a></li>
-                    <li><a href="#">Game</a></li>
+                    <li>
+                        <Link to="/business-card-mockup">Business Card Mockup</Link>
+                    </li>
+                    <li>
+                        <Link to="/text-effect">Text Effect</Link>
+                    </li>
+                    <li>
+                        <Link to="/social-media-banner">Social Media Banner</Link>
+                    </li>
+                    <li>
+                        <Link to="/game">Game</Link>
+                    </li>
                 </ul>
 
                 <div className="header-right">
                     <button className="header-btn">Sell Your Content</button>
-                    <span><a href="#">Login</a></span>
+                    <span>
+                        <Link to="/login">Login</Link>
+                    </span>
 
                 </div>
             </nav>

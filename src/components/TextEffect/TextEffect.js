@@ -1,24 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import ThemetaskPresentational from '../ThemetaskPresentational/ThemetaskPresentational';
 
-const Game = () => {
-    const [game, setGame] = useState([]);
+const TextEffect = () => {
+    const [textEffect, setTextEffect] = useState([]);
 
     useEffect(() => {
-        fetch("https://piktask.com/api/categories/50?user_id=216")
+        fetch("https://piktask.com/api/categories/48?limit=32&page=1&user_id=216")
             .then(res => res.json())
-            .then(data => setGame(data.category_image));
+            .then(data => setTextEffect(data.category_image))
     }, []);
 
     return (
         <div className="themetask">
-            <div className="themetask-top-area">
-                <h2 className="themetask-heading">Game</h2>
-                <button className="see-more-btn">See More</button>
-            </div>
+            <h2 className="themetask-heading">{textEffect.length} Resources</h2>
             <div className="themetask-wrapper">
                 {
-                    game.slice(0, 8).map(theme => <ThemetaskPresentational
+                    textEffect.map(theme => <ThemetaskPresentational
                         key={theme.image_id}
                         theme={theme}
                     />)
@@ -28,4 +25,4 @@ const Game = () => {
     );
 };
 
-export default Game;
+export default TextEffect;

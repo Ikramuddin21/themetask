@@ -1,11 +1,17 @@
 import React from 'react';
 import { HiDownload } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 import pinterestIcon from '../../images/pinterest.svg';
 import './ThemetaskPresentational.css';
 
 const ThemetaskPresentational = (props) => {
-    const { preview, avatar, title,
+    const { preview, avatar, title, image_id,
         total_download, total_likes, username } = props.theme;
+
+    // handle theme click
+    // const handlethemeClick = () => {
+    //     console.log(image_id);
+    // };
     return (
         <div className="theme-presentational">
             {/* theme image area */}
@@ -18,7 +24,9 @@ const ThemetaskPresentational = (props) => {
                 </div>
 
                 {/* theme image */}
-                <img src={`https://piktask.com/media_images/images/${preview}`} alt="" />
+                <Link to={`/theme-detail/${image_id}`}>
+                    <img src={`https://piktask.com/media_images/images/${preview}`} alt="" />
+                </Link>
             </div>
 
             {/* theme text area */}
@@ -44,7 +52,7 @@ const ThemetaskPresentational = (props) => {
                             <span className="like-count">{total_likes}</span>
                         </p>
                     </div>
-                    
+
                     <button className="download-btn">Download</button>
                 </div>
             </div>

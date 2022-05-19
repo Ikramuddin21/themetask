@@ -21,8 +21,12 @@ const Hero = () => {
 
     // handle resources 
     const handleResources = () => {
-        console.log('clicked');
-        setShowResources(true);        
+        if(!showResources === true) {
+            setShowResources(true);      
+        }
+        else {
+            setShowResources(false);
+        }
     };
 
     return (

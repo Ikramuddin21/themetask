@@ -16,7 +16,7 @@ const Themetask = () => {
         // themetask container
         <div className="themetask">
             <div className="themetask-top-area">
-                <h2>Themetask Collection</h2>
+                <h2 className="themetask-heading">Themetask Collection</h2>
                 <button className="see-more-btn">See More</button>
             </div>
             <div className="themetask-wrapper">

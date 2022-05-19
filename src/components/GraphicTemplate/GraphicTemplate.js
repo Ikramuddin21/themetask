@@ -14,7 +14,7 @@ const GraphicTemplate = () => {
     return (
         <div className="themetask">
             <div className="themetask-top-area">
-                <h2>Graphic Template</h2>
+                <h2 className="themetask-heading">Graphic Template</h2>
                 <button className="see-more-btn">See More</button>
             </div>
             <div className="themetask-wrapper">

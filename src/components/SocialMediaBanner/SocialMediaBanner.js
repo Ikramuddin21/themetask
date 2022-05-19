@@ -2,24 +2,20 @@ import React, { useEffect, useState } from 'react';
 import ThemetaskPresentational from '../ThemetaskPresentational/ThemetaskPresentational';
 
 const SocialMediaBanner = () => {
-
-    const [mediaBanner, setMediaBanner] = useState([]);
+    const [banner, setBanner] = useState([]);
 
     useEffect(() => {
-        fetch("https://piktask.com/api/categories/28?user_id=216")
+        fetch("https://piktask.com/api/categories/28?limit=32&page=1&user_id=216")
             .then(res => res.json())
-            .then(data => setMediaBanner(data.category_image))
+            .then(data => setBanner(data.category_image))
     }, []);
 
     return (
         <div className="themetask">
-            <div className="themetask-top-area">
-                <h2>Social Media Banner</h2>
-                <button className="see-more-btn">See More</button>
-            </div>
+            <h2 className="themetask-heading">{banner.length} Resources</h2>
             <div className="themetask-wrapper">
                 {
-                    mediaBanner.slice(0, 8).map(theme => <ThemetaskPresentational
+                    banner.map(theme => <ThemetaskPresentational
                         key={theme.image_id}
                         theme={theme}
                     />)
