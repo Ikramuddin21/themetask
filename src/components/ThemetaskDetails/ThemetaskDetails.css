@@ -3,8 +3,11 @@
     margin: 0 auto;
     padding: 40px 25px;
     display: flex;
-    /* justify-content: space-evenly; */
     align-items: center;
+}
+
+.theme-details button {
+    cursor: pointer;
 }
 
 .theme-details-left {
@@ -18,21 +21,25 @@
 
 .theme-details-right {
     width: 45%;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .theme-details-title {
     font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.copy-share-area {
+    margin-bottom: 15px;
 }
 
 .copy-share-area button {
     margin-left: 20px;
     padding: 8px 18px;
     border-radius: 200px;
-    cursor: pointer;
 }
+
 .copy-share-area button img {
-    display: inline-block;
     margin-right: 10px;
 }
 
@@ -40,6 +47,11 @@
 .theme-details-copy {
     background: none;
     border: 1px solid lightgray;
+}
+
+.theme-details-share:hover,
+.theme-details-copy:hover {
+    background-color: rgba(240, 255, 240, 0.553);
 }
 
 .theme-details-share img,
@@ -54,10 +66,129 @@
 }
 
 .theme-details-pinterest img {
-    width: 18px;
-    transform: translate(0, 4px);
+    transform: translate(0, 3px);
+}
+
+.theme-details-pinterest span {
+    font-size: 15px;
+}
+
+.theme-details-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.theme-details-info p {
+    font-size: 14px;
+}
+
+.theme-details-info-right {
+    margin-right: 12%;
+}
+
+.copyright-info,
+.authorization-info {
+    margin-top: 15px;
+}
+
+.copyright-info span,
+.authorization-info span {
+    display: block;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
 }
 
 .user-info img {
+    width: 40px;
+    border-radius: 200px;
+    outline: 3px solid white;
+    cursor: pointer;
+}
+
+.user-info-name {
+    margin-left: 20px;
+}
+
+.username-highlight {
+    color: #0088F2;
+    cursor: pointer;
+}
+
+.user-info-name span {
+    display: block;
+}
+
+.user-info-follow {
+    background-color: #001C30;
+    color: white;
+    margin-left: 10%;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+}
+
+.user-info-follow:hover,
+.user-like-btn:hover {
+    background-color: #0088F2;
+    transition: 0.5s;
+}
+
+.theme-details-media {
+    display: flex;
+    margin-top: 15px;
+}
+
+.theme-details-media-items {
+    display: flex;
+}
+
+.theme-details-media-items li {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.theme-details-media-items img {
+    width: 20px;
+}
+
+.download-like-btn {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.download-like-btn button {
+    border: none;
+    border-radius: 5px;
+}
+
+.user-download-btn {
+    background-color: #0088F2;
+    color: white;
+    font-size: 18px;
+    padding: 15px 70px;
+    transition: 0.5s;
+}
+
+.user-download-btn:hover {
+    background-color: #001C30;
+}
+
+.icon-download {
+    transform: translate(-10px, 3px);
+}
+
+.user-like-btn {
+    margin-left: 8%;
+    padding: 10px 20px;
+    background-color: #001C30;
+}
+
+.user-like-btn img {
     width: 30px;
 }

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { HiDownload } from 'react-icons/hi';
 import copy from '../../images/copy.svg';
 import share from '../../images/share.svg';
-import pinterest from '../../images/pinterest.svg';
+import pinterest from '../../images/pinterest1.svg';
+import likeIcon from '../../images/likeIcon.svg';
 import './ThemetaskDetails.css';
+import { socialMedia } from '../../temp/info';
 
 const ThemetaskDetails = () => {
     const { image_id } = useParams();
@@ -30,7 +33,7 @@ const ThemetaskDetails = () => {
                 <div className="copy-share-area">
                     <span>{themeDetails?.detail?.creation_ago}</span>
                     <button className="theme-details-share">
-                        <img src={share} alt="Share icon" /> 
+                        <img src={share} alt="Share icon" />
                         <span>Share</span>
                     </button>
                     <button className="theme-details-copy">
@@ -43,21 +46,21 @@ const ThemetaskDetails = () => {
                     </button>
                 </div>
 
-                <div className="d-flex">
+                <div className="theme-details-info">
                     <div>
-                        <p><strong>Image ID: </strong>{themeDetails?.detail?.id}</p>
-                        <p><strong>File Format: </strong>{themeDetails?.detail?.extension}</p>
-                        <p>
-                            <strong>Copyright Information: </strong>
+                        <p><strong>Image ID : </strong>{themeDetails?.detail?.id}</p>
+                        <p><strong>File Format : </strong>{themeDetails?.detail?.extension}</p>
+                        <p className="copyright-info">
+                            <strong>Copyright Information : </strong>
                             <span>Piktask</span>
                         </p>
                     </div>
 
-                    <div>
-                        <p><strong>Created: </strong>{themeDetails?.detail?.createdAt}</p>
-                        <p><strong>Category: </strong>{themeDetails?.detail?.category?.name}</p>
-                        <p>
-                            <strong>Scope of authorization: </strong>
+                    <div className="theme-details-info-right">
+                        <p><strong>Created : </strong>{themeDetails?.detail?.createdAt}</p>
+                        <p><strong>Category : </strong>{themeDetails?.detail?.category?.name}</p>
+                        <p className="authorization-info">
+                            <strong>Scope of authorization : </strong>
                             <span>Personal/Enterprise</span>
                         </p>
                     </div>
@@ -65,11 +68,32 @@ const ThemetaskDetails = () => {
 
                 <div className="user-info">
                     <img src={`https://piktask.com/media_images/${themeDetails?.detail?.user?.avatar}`} alt="" />
-                    <div>
-                        <span>{themeDetails?.detail?.user?.username}</span>
+                    <div className="user-info-name">
+                        <span className="username-highlight">{themeDetails?.detail?.user?.username}</span>
                         <span>{themeDetails?.detail?.user?.total_resources} Resources</span>
                     </div>
-                    <button>Follow</button>
+                    <button className="user-info-follow">Follow</button>
+                </div>
+
+                <div className="theme-details-media">
+                    <p>Follow me : </p>
+                    <ul className="theme-details-media-items">
+                        {
+                            socialMedia.slice(0, 5).map((icon, index) => <li key={index}>
+                                <Link to="https://www.google.com" target="_blank">
+                                    <img src={icon} alt="" />
+                                </Link>
+                            </li>)
+                        }
+                    </ul>
+                </div>
+
+                <div className="download-like-btn">
+                    <button className="user-download-btn">
+                        <HiDownload className="icon-download" /> Download</button>
+                    <button className="user-like-btn">
+                        <img src={likeIcon} alt="" />
+                    </button>
                 </div>
             </div>
         </div>
