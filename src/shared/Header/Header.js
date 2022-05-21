@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo.png';
+import logInIcon from '../../images/logIn.svg';
 import './Header.css';
 
 const Header = () => {
@@ -30,24 +31,26 @@ const Header = () => {
 
                 <ul className="list-items">
                     <li>
-                        <Link to="/business-card-mockup">Business Card Mockup</Link>
+                        <Link to="/category/business-card-mockup">Business Card Mockup</Link>
                     </li>
                     <li>
-                        <Link to="/text-effect">Text Effect</Link>
+                        <Link to="/category/text-effect">Text Effect</Link>
                     </li>
                     <li>
-                        <Link to="/social-media-banner">Social Media Banner</Link>
+                        <Link to="/category/social-media-banner">Social Media Banner</Link>
                     </li>
                     <li>
-                        <Link to="/game">Game</Link>
+                        <Link to="/category/game">Game</Link>
                     </li>
                 </ul>
 
                 <div className="header-right">
-                    <button className="header-btn">Sell Your Content</button>
-                    <span>
-                        <Link to="/login">Login</Link>
-                    </span>
+                    <Link to="/login">
+                        <button className="header-sell-content-btn">Sell Your Content</button>
+                    </Link>
+                    <Link to="/login">
+                        <button className='log-in-btn'><img src={logInIcon} alt="" /> Log In</button>
+                    </Link>
 
                 </div>
             </nav>

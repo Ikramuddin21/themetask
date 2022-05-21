@@ -1,0 +1,26 @@
+.tags {
+    max-width: 1500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 0 25px;
+}
+
+.tags h2 {
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.tags button {
+    background: none;
+    border: 1px solid lightgray;
+    margin: 10px 0;
+    padding: 10px 25px;
+    font-size: 15px;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.tags button:hover {
+    background: rgb(231, 231, 231);
+}

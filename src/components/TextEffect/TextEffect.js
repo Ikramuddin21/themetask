@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PopularSearch from '../PopularSearch/PopularSearch';
 import ThemetaskPresentational from '../ThemetaskPresentational/ThemetaskPresentational';
 
 const TextEffect = () => {
@@ -11,17 +12,22 @@ const TextEffect = () => {
     }, []);
 
     return (
-        <div className="themetask">
-            <h2 className="themetask-heading">{textEffect.length} Resources</h2>
-            <div className="themetask-wrapper">
-                {
-                    textEffect.map(theme => <ThemetaskPresentational
-                        key={theme.image_id}
-                        theme={theme}
-                    />)
-                }
+        <>
+            <div className="themetask">
+                <h2 className="themetask-heading">{textEffect.length} Resources</h2>
+                <div className="themetask-wrapper">
+                    {
+                        textEffect.map(theme => <ThemetaskPresentational
+                            key={theme.image_id}
+                            theme={theme}
+                        />)
+                    }
+                </div>
             </div>
-        </div>
+
+            {/* popular search tags */}
+            <PopularSearch />
+        </>
     );
 };
 

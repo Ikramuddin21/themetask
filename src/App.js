@@ -21,11 +21,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/business-card-mockup" element={<BusinessCardMockup />} />
-        <Route path="/text-effect" element={<TextEffect />} />
-        <Route path="/social-media-banner" element={<SocialMediaBanner />} />
+        <Route path="/category/business-card-mockup" element={<BusinessCardMockup />} />
+        <Route path="/category/text-effect" element={<TextEffect />} />
+        <Route path="/category/social-media-banner" element={<SocialMediaBanner />} />
+        <Route path="/category/game" element={<GameAll />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/game" element={<GameAll />} />
         <Route path="/theme-detail/:image_id" element={<ThemetaskDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

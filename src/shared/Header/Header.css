@@ -43,19 +43,13 @@ nav {
     display: flex;
 }
 
-.header-right span {
-    margin: 0 15px;
+.header-right button {
+    cursor: pointer;
 }
 
-.header-right span a {
-    text-decoration: none;
-    color: white;
-    font-size: 15px;
-
-}
-
-.header-btn {
-    padding: 6px 12px;
+.header-sell-content-btn {
+    margin-right: 10px;
+    padding: 8px 15px;
     color: white;
     background: none;
     border: 2px solid #0088F2;
@@ -63,9 +57,28 @@ nav {
     transition: all 0.6s;
 }
 
-.header-btn:hover {
+.header-sell-content-btn:hover {
     background-color: #0088F2;
     border: 2px solid transparent;
+}
+
+.log-in-btn {
+    background-color: #0088F2;
+    color: white;
+    padding: 7px 15px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.log-in-btn:hover {
+    border: 2px solid white;
+    background-color: #0089f2d0;
+}
+
+.log-in-btn img {
+    width: 15px;
+    transform: translate(0, 3px);
 }
 
 .header a:hover {

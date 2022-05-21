@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import './Carousel.css';
+import { Link } from 'react-router-dom';
 
 const Carousel = () => {
 
@@ -48,9 +49,16 @@ const Carousel = () => {
         ]
     };
 
+    // console.log(themes);
+
     return (
         <div className="carousel">
-            <h2>Popular Album Collection</h2>
+            <div className="themetask-top-area">
+                <h2 className="themetask-heading">Popular Album Collection</h2>
+                <Link to="">
+                    <button className="see-more-btn">See More</button>
+                </Link>
+            </div>
             {/* react slick slider */}
             <Slider {...settings} >
                 {
@@ -59,7 +67,7 @@ const Carousel = () => {
                             <div className="img-area">
                                 <img src={`https://piktask.com/media_images/categories/${theme.thumbnail}`} alt={theme.name} />
                             </div>
-                            
+
                             <div className="text-area">
                                 <h4>{theme.name}</h4>
                             </div>

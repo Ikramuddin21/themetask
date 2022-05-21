@@ -21,12 +21,7 @@ const Hero = () => {
 
     // handle resources 
     const handleResources = () => {
-        if(!showResources === true) {
-            setShowResources(true);      
-        }
-        else {
-            setShowResources(false);
-        }
+        setShowResources(true);
     };
 
     return (
