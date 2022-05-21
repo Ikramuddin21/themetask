@@ -7,6 +7,8 @@ import pinterest from '../../images/pinterest1.svg';
 import likeIcon from '../../images/likeIcon.svg';
 import './ThemetaskDetails.css';
 import { socialMedia } from '../../temp/info';
+import RelatedProducts from '../RelatedProducts/RelatedProducts';
+import RelatedTags from '../RelatedTags/RelatedTags';
 
 const ThemetaskDetails = () => {
     const { image_id } = useParams();
@@ -23,6 +25,8 @@ const ThemetaskDetails = () => {
 
     // const { preview, title, creation_ago, id, createdAt, extension } = themeDetails?.detail;
     return (
+        <>
+        {/* theme details */}
         <div className="theme-details">
             <div className="theme-details-left">
                 <img src={`https://piktask.com/media_images/images/${themeDetails?.detail?.preview}`} alt={themeDetails?.detail?.title} />
@@ -97,6 +101,13 @@ const ThemetaskDetails = () => {
                 </div>
             </div>
         </div>
+
+        {/* related products components */}
+        <RelatedProducts image_id={image_id} />
+
+        {/* related tags */}
+        <RelatedTags themeDetails={themeDetails?.related_tags} />
+        </>
     );
 };
 
