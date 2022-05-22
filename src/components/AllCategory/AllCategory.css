@@ -1,0 +1,25 @@
+.allCategory {
+    background-color: white;
+    cursor: pointer;
+    max-height: 280px;
+    transition: 0.5s;
+}
+
+.allCategory:hover {
+    background-color: rgba(233, 230, 230, 0.742);
+}
+
+.allCategory-img-area {
+    height: 230px;
+    overflow: hidden;
+}
+
+.allCategory-img-area img {
+    width: 100%;
+}
+
+.allCategory-text-area {
+    height: 50px;
+    display: grid;
+    place-items: center;
+}

@@ -53,6 +53,11 @@
     background-color: white;
     cursor: pointer;
     max-height: 280px;
+    transition: 0.5s;
+}
+
+.item:hover {
+    background-color: rgba(233, 230, 230, 0.742);
 }
 
 .img-area {

@@ -3,10 +3,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import './Carousel.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Carousel = () => {
-
+    const navigate = useNavigate();
     const [themes, setThemes] = useState([]);
 
     useEffect(() => {
@@ -49,13 +49,16 @@ const Carousel = () => {
         ]
     };
 
-    // console.log(themes);
+    // handle categories 
+    const handleCategories = category => {
+        navigate(`/category/${category.slug}/${category.id}`);
+    };
 
     return (
         <div className="carousel">
             <div className="themetask-top-area">
                 <h2 className="themetask-heading">Popular Album Collection</h2>
-                <Link to="">
+                <Link to="/categories">
                     <button className="see-more-btn">See More</button>
                 </Link>
             </div>
@@ -63,7 +66,11 @@ const Carousel = () => {
             <Slider {...settings} >
                 {
                     themes.map(theme => (
-                        <div className="carousel-item" key={theme.id}>
+                        <div
+                            className="carousel-item"
+                            key={theme.id}
+                            onClick={() => handleCategories(theme)}
+                        >
                             <div className="img-area">
                                 <img src={`https://piktask.com/media_images/categories/${theme.thumbnail}`} alt={theme.name} />
                             </div>

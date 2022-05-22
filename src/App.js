@@ -8,10 +8,12 @@ import Hero from './shared/Hero/Hero';
 import News from './shared/News/News';
 import Footer from './shared/Footer/Footer';
 import TextEffect from './components/TextEffect/TextEffect';
-import SocialMediaBanner from './components/SocialMediaBanner/SocialMediaBanner';
+import AllSocialMediaBanner from './components/AllSocialMediaBanner/AllSocialMediaBanner';
 import GameAll from './components/GameAll/GameAll';
 import Login from './components/Login/Login';
 import ThemetaskDetails from './components/ThemetaskDetails/ThemetaskDetails';
+import Category from './components/Category/Category';
+import Categories from './components/Categories/Categories';
 
 function App() {
   return (
@@ -23,10 +25,12 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/category/business-card-mockup" element={<BusinessCardMockup />} />
         <Route path="/category/text-effect" element={<TextEffect />} />
-        <Route path="/category/social-media-banner" element={<SocialMediaBanner />} />
+        <Route path="/category/social-media-banner" element={<AllSocialMediaBanner />} />
         <Route path="/category/game" element={<GameAll />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/theme-detail/:image_id" element={<ThemetaskDetails />} />
+        <Route  path="/category/:name/:id" element={<Category />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <News />

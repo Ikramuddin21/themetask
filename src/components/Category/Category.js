@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import PopularSearch from '../PopularSearch/PopularSearch';
 import ThemetaskPresentational from '../ThemetaskPresentational/ThemetaskPresentational';
 
-const SocialMediaBanner = () => {
-    const [banner, setBanner] = useState([]);
+const Category = () => {
+    const { id } = useParams();
+    const [category, setCategory] = useState([]);
 
     useEffect(() => {
-        fetch("https://piktask.com/api/categories/28?limit=32&page=1&user_id=216")
+        const url = `https://piktask.com/api/categories/${id}?limit=32&page=1`;
+        fetch(url)
             .then(res => res.json())
-            .then(data => setBanner(data.category_image))
-    }, []);
+            .then(data => setCategory(data.category_image))
+    }, [id]);
 
     return (
         <>
             <div className="themetask">
-                <h2 className="themetask-heading">{banner.length} Resources</h2>
+                <h2 className="themetask-heading">{category.length} Resources</h2>
                 <div className="themetask-wrapper">
                     {
-                        banner.map(theme => <ThemetaskPresentational
+                        category.map(theme => <ThemetaskPresentational
                             key={theme.image_id}
                             theme={theme}
                         />)
@@ -31,4 +34,4 @@ const SocialMediaBanner = () => {
     );
 };
 
-export default SocialMediaBanner;
+export default Category;

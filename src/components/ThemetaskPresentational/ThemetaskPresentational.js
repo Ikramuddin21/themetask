@@ -31,7 +31,9 @@ const ThemetaskPresentational = (props) => {
             {/* theme text area */}
             <div className="theme-text-area">
                 {/* theme title */}
-                <p className="title"><small>{title.split(" ").splice(0, 5).join(" ")}...</small></p>
+                <Link to={`/theme-detail/${image_id}`}>
+                    <p className="title"><small>{title.split(" ").splice(0, 5).join(" ")}...</small></p>
+                </Link>
                 {/* theme information */}
                 <div className="info">
                     <div className="profile">
@@ -52,7 +54,9 @@ const ThemetaskPresentational = (props) => {
                         </p>
                     </div>
 
-                    <button className="download-btn">Download</button>
+                    <Link to={`/theme-detail/${image_id}`}>
+                        <button className="download-btn">Download</button>
+                    </Link>
                 </div>
             </div>
         </div>

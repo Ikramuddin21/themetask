@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ThemetaskPresentational from '../ThemetaskPresentational/ThemetaskPresentational';
 
 const Game = () => {
@@ -14,7 +15,9 @@ const Game = () => {
         <div className="themetask">
             <div className="themetask-top-area">
                 <h2 className="themetask-heading">Game</h2>
-                <button className="see-more-btn">See More</button>
+                <Link to="/category/game/50">
+                    <button className="see-more-btn">See More</button>
+                </Link>
             </div>
             <div className="themetask-wrapper">
                 {
