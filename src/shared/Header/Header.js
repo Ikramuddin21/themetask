@@ -4,7 +4,7 @@ import logo from '../../images/logo.png';
 import logInIcon from '../../images/logIn.svg';
 import './Header.css';
 
-const Header = () => {
+const Header = ({ setModal }) => {
 
     const [stickyHeader, setStickyHeader] = useState(false);
 
@@ -45,12 +45,14 @@ const Header = () => {
                 </ul>
 
                 <div className="header-right">
-                    <Link to="/login">
-                        <button className="header-sell-content-btn">Sell Your Content</button>
-                    </Link>
-                    <Link to="/login">
-                        <button className='log-in-btn'><img src={logInIcon} alt="" /> Log In</button>
-                    </Link>
+                    <button
+                        className="header-sell-content-btn"
+                        onClick={() => setModal(true)}
+                    >Sell Your Content</button>
+                    <button
+                        className='log-in-btn'
+                        onClick={() => setModal(true)}
+                    ><img src={logInIcon} alt="" /> Log In</button>
 
                 </div>
             </nav>

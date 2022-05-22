@@ -14,28 +14,33 @@ import Login from './components/Login/Login';
 import ThemetaskDetails from './components/ThemetaskDetails/ThemetaskDetails';
 import Category from './components/Category/Category';
 import Categories from './components/Categories/Categories';
+import { useState } from 'react';
 
 function App() {
+  const [modal, setModal] = useState(false);
   return (
-    <BrowserRouter>
-      <Header />
-      <Hero />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/category/business-card-mockup" element={<BusinessCardMockup />} />
-        <Route path="/category/text-effect" element={<TextEffect />} />
-        <Route path="/category/social-media-banner" element={<AllSocialMediaBanner />} />
-        <Route path="/category/game" element={<GameAll />} />
-        <Route path="/theme-detail/:image_id" element={<ThemetaskDetails />} />
-        <Route  path="/category/:name/:id" element={<Category />} />
-        <Route path="/categories" element={<Categories />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <News />
-      <Footer />
-    </BrowserRouter>
+    <>
+      { modal && <Login setModal={setModal} /> }
+      <BrowserRouter>
+        <Header setModal={setModal} />
+        <Hero />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/category/business-card-mockup" element={<BusinessCardMockup />} />
+          <Route path="/category/text-effect" element={<TextEffect />} />
+          <Route path="/category/social-media-banner" element={<AllSocialMediaBanner />} />
+          <Route path="/category/game" element={<GameAll />} />
+          <Route path="/theme-detail/:image_id" element={<ThemetaskDetails />} />
+          <Route path="/category/:name/:id" element={<Category />} />
+          <Route path="/categories" element={<Categories />} />
+          {/* <Route path="/login" element={<Login />} /> */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <News />
+        <Footer />
+      </BrowserRouter>
+    </>
   );
 }
 

@@ -2,5 +2,200 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 9999999;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+}
+
+.login button {
+    cursor: pointer;
+}
+
+.login-container {
+    max-width: 800px;
+    border-radius: 5px;
+    background-color: white;
+    position: relative
+}
+
+.close-btn {
+    position: absolute;
+    left: 95%;
+    height: 0;
+    font-size: 40px;
+    border: none;
+    color: #0088F2;
+}
+
+.login-wrapper {
+    display: flex;
+}
+
+.login-left {
+    background-color: #0088F2;
+    width: 55%;
+    padding: 20px;
+    /* padding-left: 20px; */
+}
+
+.login-piktask {
+    width: 120px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.login-left p {
+    color: white;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.login-banner {
+    width: 80%;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.login-right {
+    padding: 20px;
+    text-align: center;
+}
+
+.login-signup-btn {
+    /* padding: 20px; */
+}
+
+.login-btn, .signup-btn {
+    background: none;
+    border: none;
+    margin: 0 10px;
+    padding: 15px 40px;
+    font-size: 18px;
+    color: gray;
+    transition: 0.5s;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+    color: #0088F2;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.log-active {
+    color: #0088F2;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.login-social {
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.login-social p {
+    margin-bottom: 10px;
+}
+
+.login-google-btn, 
+.login-facebook-btn {
+    border: none;
+    margin: 0 10px;
+    height: 45px;
+    width: 42%;
+    font-size: 16px;
+    border-radius: 5px;
+    color: white;
+    transition: 0.5s;
+}
+
+.login-google-btn {
+    background-color: #C74C37;
+}
+
+.login-google-btn:hover {
+    background-color: #ab311d;
+}
+
+.login-facebook-btn {
+    background-color: #425993;
+}
+
+.login-facebook-btn:hover {
+    background-color: #213567;
+}
+
+.or::after,
+.or::before {
+    content: "";
+    width: 41%;
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    border-top: 1px solid lightgray;
+}
+
+.or::before {
+    left: -3px;
+}
+
+.or::after {
+    right: -3px;
+}
+
+.form {
+    margin-top: 15px;
+}
+
+.form button,
+.form input {
+    width: 90%;
+    padding: 15px 10px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.email-field,
+.password-field,
+.form-signin-btn {
+    margin-top: 15px;
+}
+
+.form input {
+    border: 1px solid lightgray;
+    outline: 2px solid transparent;
+    font-size: 15px;
+}
+
+.form input:focus {
+    outline: 2px solid lightgray;
+}
+
+.form-signin-btn {
+    font-size: 16px;
+    border: none;
+    color: white;
+    background-color: #0088f2;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -6px;
+}
+
+.form-signin-btn:hover {
+    background-color: #087bd2;
+}
+
+.reset-password {
+    color: #0088F2;
+    margin-top: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.toggle-signin {
+    margin-top: 30px;
+    font-size: 16;
+}
+
+.signup-highlight {
+    color: #0088F2;
+    cursor: pointer;
 }
