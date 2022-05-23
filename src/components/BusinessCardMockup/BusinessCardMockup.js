@@ -14,7 +14,9 @@ const BusinessCardMockup = () => {
     return (
         <>
             <div className="themetask">
-                <h2 className="themetask-heading">{businessMockup.length} Resources</h2>
+                <div className="themetask-top-area">
+                    <h2 className="themetask-heading">{businessMockup.length} Resources</h2>
+                </div>
                 <div className="themetask-wrapper">
                     {
                         businessMockup.map(theme => <ThemetaskPresentational

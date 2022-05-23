@@ -14,7 +14,9 @@ const TextEffect = () => {
     return (
         <>
             <div className="themetask">
-                <h2 className="themetask-heading">{textEffect.length} Resources</h2>
+                <div className="themetask-top-area">
+                    <h2>{textEffect.length} Resources</h2>
+                </div>
                 <div className="themetask-wrapper">
                     {
                         textEffect.map(theme => <ThemetaskPresentational

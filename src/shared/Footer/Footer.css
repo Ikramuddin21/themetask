@@ -34,16 +34,19 @@
 }
 
 .footer-bottom {
+    background-color: rgb(1 32 54);
+}
+
+.footer-copy-social {
     max-width: 1500px;
     margin: 0 auto;
     padding: 10px 40px 10px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(1 32 54);
 }
 
-.footer-bottom img {
+.footer-copy-social img {
     width: 140px;
     cursor: pointer;
 }

@@ -13,16 +13,10 @@
     cursor: pointer;
 }
 
-.login-container {
-    max-width: 800px;
-    border-radius: 5px;
-    background-color: white;
-    position: relative
-}
-
 .close-btn {
-    position: absolute;
-    left: 95%;
+    position: relative;
+    top: 40px;
+    left: 96%;
     height: 0;
     font-size: 40px;
     border: none;
@@ -31,13 +25,16 @@
 
 .login-wrapper {
     display: flex;
+    background-color: white;
+    max-width: 780px;
+    max-height: 590px;
+    margin: auto;
 }
 
 .login-left {
     background-color: #0088F2;
-    width: 55%;
     padding: 20px;
-    /* padding-left: 20px; */
+    width: 45%;
 }
 
 .login-piktask {
@@ -53,18 +50,15 @@
 }
 
 .login-banner {
-    width: 80%;
+    width: 70%;
     margin-top: 50px;
     margin-left: 20px;
 }
 
 .login-right {
     padding: 20px;
+    width: 55%;
     text-align: center;
-}
-
-.login-signup-btn {
-    /* padding: 20px; */
 }
 
 .login-btn, .signup-btn {
@@ -198,4 +192,23 @@
 .signup-highlight {
     color: #0088F2;
     cursor: pointer;
+}
+
+.signUp-checkUp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-left: 20px;
+    text-align: left;
+    width: 95%;
+}
+
+.signUp-checkUp input {
+    width: 20px;
+    height: 20px;
+}
+
+.signUp-checkUp label {
+    margin-left: 10px;
 }

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import loginBanner from '../../images/login-banner.png';
 import loginPiktask from '../../images/login-piktask.png';
 import './Login.css';
 
 const Login = ({ setModal }) => {
+
+    const [login, setLogin] = useState(true);
+    
     return (
         <div className="login">
             <div className="login-container">
@@ -24,8 +27,11 @@ const Login = ({ setModal }) => {
 
                     <div className="login-right">
                         <div className="login-signup-btn">
-                            <button className="log-active login-btn">Login</button>
-                            <button className="signup-btn">Sign Up</button>
+                            <button className={ login ? "log-active login-btn" : "login-btn"} onClick={() => setLogin(true)}>Login</button>
+                            <button 
+                            className={!login ? "log-active signup-btn" : "signup-btn"}
+                            onClick={() => setLogin(false)}
+                            >Sign Up</button>
                         </div>
 
                         <div className="login-social">
@@ -39,14 +45,20 @@ const Login = ({ setModal }) => {
                         <span className="or">OR</span>
 
                         <form className="form">
-                            {/* <input className="name-field" type="text" placeholder="User Name" /> */}
+                            {!login && <input className="name-field" type="text" placeholder="User Name" />}
                             <input className="email-field" type="email" placeholder="Email" />
                             <input className="password-field" type="password" name="" id="" placeholder="Password" />
-                            <button className="form-signin-btn" type="submit">Sign In</button>
-                            <p className="reset-password">Password Reset</p>
+                            <button className="form-signin-btn" type="submit">{login ? "Sign In" : "Sign Up"}</button>
+
+                            {!login && <div className="signUp-checkUp">
+                                <input type="checkbox" name="" id="checkUp" />
+                                <label htmlFor="checkUp"><small>I do not wish to receive news and promotions from Piktask LLC by email.</small></label>
+                            </div>}
+                            {login && <p className="reset-password">Password Reset</p>}
+                           { !login && <p className="reset-password" onClick={() => setLogin(true)}>Already Registered? Sign In</p>}
                         </form>
 
-                        <p className="toggle-signin">Not a member? <span className="signup-highlight">Sign Up</span></p>
+                        {login && <p className="toggle-signin">Not a member? <span className="signup-highlight" onClick={() => setLogin(false)}>Sign Up</span></p>}
                     </div>
                 </div>
             </div>

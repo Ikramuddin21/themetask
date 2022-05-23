@@ -1,28 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import ThemetaskPresentational from '../ThemetaskPresentational/ThemetaskPresentational';
 
-const SocialMedia = () => {
-
-    const [mediaBanner, setMediaBanner] = useState([]);
+const Recent = () => {
+    const [recent, setRecent] = useState([]);
 
     useEffect(() => {
-        fetch("https://piktask.com/api/categories/28?user_id=216")
+        fetch("https://piktask.com/api/images?sort_by=recent&limit=60&page=1")
             .then(res => res.json())
-            .then(data => setMediaBanner(data.category_image))
+            .then(data => setRecent(data.images))
     }, []);
 
     return (
         <div className="themetask">
             <div className="themetask-top-area">
-                <h2>Social Media Banner</h2>
-                <Link to="/category/social-media-banner/28">
-                    <button className="see-more-btn">See More</button>
-                </Link>
+                <h2>Recent Images</h2>
             </div>
             <div className="themetask-wrapper">
                 {
-                    mediaBanner.slice(0, 8).map(theme => <ThemetaskPresentational
+                    recent.map(theme => <ThemetaskPresentational
                         key={theme.image_id}
                         theme={theme}
                     />)
@@ -32,4 +27,4 @@ const SocialMedia = () => {
     );
 };
 
-export default SocialMedia;
+export default Recent;

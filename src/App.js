@@ -15,6 +15,7 @@ import ThemetaskDetails from './components/ThemetaskDetails/ThemetaskDetails';
 import Category from './components/Category/Category';
 import Categories from './components/Categories/Categories';
 import { useState } from 'react';
+import Recent from './components/Recent/Recent';
 
 function App() {
   const [modal, setModal] = useState(false);
@@ -34,7 +35,7 @@ function App() {
           <Route path="/theme-detail/:image_id" element={<ThemetaskDetails />} />
           <Route path="/category/:name/:id" element={<Category />} />
           <Route path="/categories" element={<Categories />} />
-          {/* <Route path="/login" element={<Login />} /> */}
+          <Route path="/recent/new-design" element={<Recent />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <News />

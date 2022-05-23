@@ -10,9 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.themetask-heading {
+    align-items: center;
     margin-bottom: 20px;
 }
 
@@ -36,3 +34,27 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 15px;
 }
+
+/* media query */
+@media only screen and (max-width: 1080px) {
+    .themetask-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .themetask-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .themetask-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .themetask-top-area {
+        justify-content: space-evenly;
+    }
+}
+

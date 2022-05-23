@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ThemetaskPresentational from '../ThemetaskPresentational/ThemetaskPresentational';
 
-const RelatedProducts = ({image_id}) => {
+const RelatedProducts = ({ image_id }) => {
     const [relatedProducts, setRelatedProducts] = useState([]);
 
     useEffect(() => {
@@ -13,7 +13,9 @@ const RelatedProducts = ({image_id}) => {
 
     return (
         <div className="themetask">
-            <h2 className="themetask-heading">Related Products</h2>
+            <div className="themetask-top-area">
+                <h2>Related Products</h2>
+            </div>
             <div className="themetask-wrapper">
                 {
                     relatedProducts.map(theme => <ThemetaskPresentational

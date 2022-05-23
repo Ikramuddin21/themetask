@@ -14,7 +14,9 @@ const GameAll = () => {
     return (
         <>
             <div className="themetask">
-                <h2 className="themetask-heading">{gameAll.length} Resources</h2>
+                <div className="themetask-top-area">
+                    <h2>{gameAll.length} Resources</h2>
+                </div>
                 <div className="themetask-wrapper">
                     {
                         gameAll.map(theme => <ThemetaskPresentational

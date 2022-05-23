@@ -118,3 +118,34 @@
     background-color: #0088F2;
     color: white;
 }
+
+/* media query */
+@media only screen and (max-width: 1080px) {
+    .icons-hover img, 
+    .icons-hover svg {
+        left: 86%;
+    }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 800px) {
+    .theme-text-area {
+        padding: 10px 7px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .icons-hover img, 
+    .icons-hover svg {
+        left: 87%;
+    }
+
+    .score {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+   .score {
+       flex-direction: row;
+   }
+}

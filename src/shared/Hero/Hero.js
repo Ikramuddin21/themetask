@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
@@ -6,6 +7,7 @@ const Hero = () => {
     const [popularSearch, setPopularSearch] = useState([]);
     const [resources, setResources] = useState([]);
     const [showResources, setShowResources] = useState(false);
+    const [popular, setPopular] = useState(true);
 
     useEffect(() => {
         fetch("https://piktask.com/api/client/search/popular_keyword?limit=10")
@@ -19,22 +21,27 @@ const Hero = () => {
             .then(data => setResources(data.categories))
     }, []);
 
-    // handle resources 
-    const handleResources = () => {
-        setShowResources(true);
+    // show resources false
+    useEffect(() => {
+        document.addEventListener("mousedown", () => setShowResources(false));
+    }, []);
+
+    // handle search
+    const handleSearch = (e) => {
+        e.preventDefault();
     };
 
     return (
         <div className="hero">
             <div>
                 <h1 className="hero-title">Graphic Resources for Free Download</h1>
-                <form className="hero-form" action="">
+                <form className="hero-form" onSubmit={handleSearch}>
                     <div className="input-area">
                         <input type="text" placeholder="Search All Resources" />
                     </div>
 
                     <div className="resources-area">
-                        <div className="resources-btn" onClick={handleResources}>
+                        <div className="resources-btn" onClick={() => setShowResources(true)}>
                             <span>All Resources</span>
                             <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"></path></svg>
                         </div>
@@ -73,8 +80,19 @@ const Hero = () => {
                     }
                 </div>
                 <div className="hero-button">
-                    <button className="popular-btn active">Popular</button>
-                    <button className="recent-btn">Recent</button>
+                    <Link to="/">
+                        <button
+                            className={popular ? "active" : ""}
+                            onClick={() => setPopular(true)}
+                        >Popular</button>
+                    </Link>
+                    
+                    <Link to="/recent/new-design">
+                        <button
+                            className={!popular ? "active" : ""}
+                            onClick={() => setPopular(false)}
+                        >Recent</button>
+                    </Link>
                 </div>
             </div>
         </div>

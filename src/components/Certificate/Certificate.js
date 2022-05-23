@@ -15,7 +15,7 @@ const Certificate = () => {
     return (
         <div className="themetask">
             <div className="themetask-top-area">
-                <h2 className="themetask-heading">Certificates</h2>
+                <h2>Certificates</h2>
                 <Link to="/category/certificates/45">
                     <button className="see-more-btn">See More</button>
                 </Link>

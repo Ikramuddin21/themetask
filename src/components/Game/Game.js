@@ -14,7 +14,7 @@ const Game = () => {
     return (
         <div className="themetask">
             <div className="themetask-top-area">
-                <h2 className="themetask-heading">Game</h2>
+                <h2>Game</h2>
                 <Link to="/category/game/50">
                     <button className="see-more-btn">See More</button>
                 </Link>

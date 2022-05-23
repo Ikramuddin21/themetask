@@ -57,7 +57,7 @@ const Carousel = () => {
     return (
         <div className="carousel">
             <div className="themetask-top-area">
-                <h2 className="themetask-heading">Popular Album Collection</h2>
+                <h2>Popular Album Collection</h2>
                 <Link to="/categories">
                     <button className="see-more-btn">See More</button>
                 </Link>

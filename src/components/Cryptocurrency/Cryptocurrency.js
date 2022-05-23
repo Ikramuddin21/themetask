@@ -14,7 +14,7 @@ const Cryptocurrency = () => {
     return (
         <div className="themetask">
             <div className="themetask-top-area">
-                <h2 className="themetask-heading">Cryptocurrency</h2>
+                <h2>Cryptocurrency</h2>
                 <Link to="/category/cryptocurrency/51">
                     <button className="see-more-btn">See More</button>
                 </Link>

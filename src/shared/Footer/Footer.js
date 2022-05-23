@@ -50,17 +50,19 @@ const Footer = () => {
             </div>
 
             <div className="footer-bottom">
-                <Link to="/">
-                    <img src={logo} alt="" />
-                </Link>
-                <p>copyright &copy; themetask-all right reserved, 2022</p>
-                <ul className="social-medias">
-                    {
-                        socialMedia.map((icon, index) => <li key={index}>
-                            <img className="media-icon" src={icon} alt="icon" />
-                        </li>)
-                    }
-                </ul>
+                <div className="footer-copy-social">
+                    <Link to="/">
+                        <img src={logo} alt="" />
+                    </Link>
+                    <p>copyright &copy; themetask-all right reserved, 2022</p>
+                    <ul className="social-medias">
+                        {
+                            socialMedia.map((icon, index) => <li key={index}>
+                                <img className="media-icon" src={icon} alt="icon" />
+                            </li>)
+                        }
+                    </ul>
+                </div>
             </div>
         </footer>
     );

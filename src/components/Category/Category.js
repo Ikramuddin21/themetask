@@ -17,7 +17,9 @@ const Category = () => {
     return (
         <>
             <div className="themetask">
-                <h2 className="themetask-heading">{category.length} Resources</h2>
+                <div className="themetask-top-area">
+                    <h2>{category.length} Resources</h2>
+                </div>
                 <div className="themetask-wrapper">
                     {
                         category.map(theme => <ThemetaskPresentational

@@ -17,7 +17,7 @@ const Themetask = () => {
         // themetask container
         <div className="themetask">
             <div className="themetask-top-area">
-                <h2 className="themetask-heading">Themetask Collection</h2>
+                <h2>Themetask Collection</h2>
                 <Link to="/category/piktask-collection/53">
                     <button className="see-more-btn">See More</button>
                 </Link>

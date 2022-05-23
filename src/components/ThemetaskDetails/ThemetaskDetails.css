@@ -77,7 +77,6 @@
 .theme-details-info {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .theme-details-info p {
@@ -85,7 +84,7 @@
 }
 
 .theme-details-info-right {
-    margin-right: 12%;
+    margin-left: 14%;
 }
 
 .copyright-info,
@@ -192,4 +191,40 @@
 
 .user-like-btn img {
     width: 30px;
+}
+
+/* media query */
+@media only screen and (max-width: 1080px) {
+    .theme-details {
+        flex-direction: column;
+        align-items: unset;
+    }
+
+    .theme-details-left {
+        width: 100%;
+    }
+
+    .theme-details-right {
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .theme-details-right {
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .user-download-btn {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .copy-share-area button {
+        margin-top: 5px;
+        margin-left: 10px;
+        padding: 8px 15px;
+    }
 }
