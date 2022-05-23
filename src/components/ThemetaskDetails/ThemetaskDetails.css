@@ -211,11 +211,6 @@
     }
 }
 
-@media only screen and (max-width: 750px) {
-    .theme-details-right {
-    }
-}
-
 @media only screen and (max-width: 540px) {
     .user-download-btn {
         padding-left: 40px;
