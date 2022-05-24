@@ -36,12 +36,13 @@ const Header = ({ setModal }) => {
 
     return (
         <header className={stickyHeader ? "header active" : "header"}>
-            <button className={!showMenuIcon ? "show-closeIcon" : "close-icon"} onClick={() => setShowMenuIcon(true)}>&times;</button>
             <nav className={!showMenuIcon ? "show-nav" : ""}>
                 <div className="logo-area">
                     <Link to="/">
                         <img className="logo" src={logo} alt="Logo" onClick={() => setShowMenuIcon(true)} />
                     </Link>
+
+                    <button className={!showMenuIcon ? "close-icon show-closeIcon" : "close-icon"} onClick={() => setShowMenuIcon(true)}>&times;</button>
 
                     <img className={showMenuIcon ? "menu-icon" : "hide-menu"} src={menuIcon} alt="" onClick={() => setShowMenuIcon(false)} />
                 </div>

@@ -1,5 +1,5 @@
 .hero {
-    height: 280px;
+    height: 300px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -9,6 +9,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+.hero > div {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 25px;
 }
 
 .hero-title {
@@ -135,4 +141,15 @@
 .hero-button .active {
     background-color: #0088F2;
     border: none;
+}
+
+/* media query */
+@media only screen and (max-width: 430px) {
+   .hero-form input::placeholder {
+       font-size: 14px;
+   }
+
+   .resources-btn {
+       font-size: 14px;
+   }
 }

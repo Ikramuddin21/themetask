@@ -8,10 +8,6 @@ const ThemetaskPresentational = (props) => {
     const { preview, avatar, title, image_id,
         total_download, total_likes, username } = props.theme;
 
-    // handle theme click
-    // const handlethemeClick = () => {
-    //     console.log(image_id);
-    // };
     return (
         <div className="theme-presentational">
             {/* theme image area */}

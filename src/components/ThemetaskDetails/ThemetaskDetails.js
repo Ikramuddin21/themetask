@@ -23,7 +23,6 @@ const ThemetaskDetails = () => {
             })
     }, [image_id]);
 
-    // const { preview, title, creation_ago, id, createdAt, extension } = themeDetails?.detail;
     return (
         <>
         {/* theme details */}

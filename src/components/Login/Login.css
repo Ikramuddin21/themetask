@@ -105,6 +105,7 @@
 
 .login-google-btn {
     background-color: #C74C37;
+    margin-bottom: 5px;
 }
 
 .login-google-btn:hover {
@@ -212,3 +213,35 @@
 .signUp-checkUp label {
     margin-left: 10px;
 }
+
+/* media query */
+@media only screen and (max-width: 850px) {
+    .login-wrapper {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-left {
+        display: none;
+    }
+
+    .login-right {
+        width: 80%;
+        height: auto;
+        padding: 7px;
+    }
+
+    .close-btn {
+        left: 93%;
+        top: 45px;
+    }
+
+    .login-social {
+        margin: 10px 0;
+    }
+
+    .form {
+        margin-top: 5px;
+    }
+}
+
