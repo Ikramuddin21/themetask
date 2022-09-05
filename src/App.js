@@ -1,21 +1,21 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import BusinessCardMockup from './components/BusinessCardMockup/BusinessCardMockup';
-import Home from './components/Home/Home';
-import NotFound from './components/NotFound/NotFound';
-import Header from './shared/Header/Header';
-import Hero from './shared/Hero/Hero';
-import News from './shared/News/News';
-import Footer from './shared/Footer/Footer';
-import TextEffect from './components/TextEffect/TextEffect';
-import AllSocialMediaBanner from './components/AllSocialMediaBanner/AllSocialMediaBanner';
-import GameAll from './components/GameAll/GameAll';
-import Login from './components/Login/Login';
-import ThemetaskDetails from './components/ThemetaskDetails/ThemetaskDetails';
-import Category from './components/Category/Category';
-import Categories from './components/Categories/Categories';
+import BusinessCardMockup from './Pages/BusinessCardMockup/BusinessCardMockup';
+import Home from './Pages/Home/Home/Home';
+import NotFound from './Pages/Shared/NotFound/NotFound';
+import Header from './Pages/Shared/Header/Header';
+import Hero from './Pages/Shared/Hero/Hero';
+import News from './Pages/Shared/News/News';
+import Footer from './Pages/Shared/Footer/Footer';
+import TextEffect from './Pages/TextEffect/TextEffect';
+import AllSocialMediaBanner from './Pages/AllSocialMediaBanner/AllSocialMediaBanner';
+import GameAll from './Pages/GameAll/GameAll';
+import Login from './Pages/Shared/Login/Login';
+import ThemetaskDetails from './Pages/ThemetaskDetailsInfo/ThemetaskDetails/ThemetaskDetails';
+import Category from './Pages/Category/Category';
+import Categories from './Pages/Categories/Categories';
 import { useState } from 'react';
-import Recent from './components/Recent/Recent';
+import Recent from './Pages/Recent/Recent';
 
 function App() {
   const [modal, setModal] = useState(false);

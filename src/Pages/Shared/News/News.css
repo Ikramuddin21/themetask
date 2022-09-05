@@ -1,0 +1,37 @@
+.news {
+    background: linear-gradient(rgba(0, 28, 48, 0.4), rgba(0, 28, 48, 0.4)), url('../../../images/news.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 180px;
+    margin-top: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.news h2 {
+    margin-bottom: 15px;
+    word-spacing: 5px;
+}
+
+.news p {
+    margin-bottom: 20px;
+}
+
+.news button {
+    padding: 6px 12px;
+    color: white;
+    background-color: #0088F2;
+    border: 2px solid transparent;
+    border-color: transparent;
+    border-radius: 20px;
+    transition: all 0.6s;
+}
+
+.news button:hover {
+    background: none;
+    border: 2px solid #0088F2;
+}
