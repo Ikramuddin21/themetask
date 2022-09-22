@@ -12,8 +12,8 @@ const Home = () => {
       <Carousel />
       <Themetask />
       <SocialMedia />
-      <GraphicTemplate />
       <Certificate />
+      <GraphicTemplate />
       <Game />
       <Cryptocurrency />
     </>

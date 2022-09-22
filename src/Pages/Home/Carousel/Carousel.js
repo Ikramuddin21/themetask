@@ -4,15 +4,17 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import './Carousel.css';
 import { Link, useNavigate } from 'react-router-dom';
+import Skeleton from 'react-loading-skeleton';
+import SkeletonCard from '../../../skeleton/SkeletonCard';
 
-const Carousel = ({setIsLoading}) => {
+const Carousel = () => {
     const navigate = useNavigate();
     const [themes, setThemes] = useState([]);
 
     useEffect(() => {
-        fetch("https://piktask.com/api/categories/popular?limit=6")
+        fetch("https://themetask-server.onrender.com/carouselitems")
             .then(res => res.json())
-            .then(data => setThemes(data.categories))
+            .then(data => setThemes(data.slice(0, 6)))
     }, []);
 
     // carousel settings
@@ -50,39 +52,56 @@ const Carousel = ({setIsLoading}) => {
     };
 
     // handle categories 
-    const handleCategories = category => {
-        navigate(`/category/${category.slug}/${category.id}`);
+    const handleCategories = name => {
+        navigate(`/category/${name.toLowerCase()}`);
     };
 
     return (
-        <div className="carousel">
-            <div className="themetask-top-area">
-                <h2>Popular Album Collection</h2>
-                <Link to="/categories">
-                    <button className="see-more-btn">See More</button>
-                </Link>
-            </div>
-            {/* react slick slider */}
-            <Slider {...settings} >
-                {
-                    themes.map(theme => (
-                        <div
-                            className="carousel-item"
-                            key={theme.id}
-                            onClick={() => handleCategories(theme)}
-                        >
-                            <div className="img-area">
-                                <img src={`https://piktask.com/media_images/categories/${theme.thumbnail}`} alt={theme.name} />
-                            </div>
-
-                            <div className="text-area">
-                                <h4>{theme.name}</h4>
-                            </div>
+        <>
+            {
+                !themes.length ?
+                    <div className="themetask">
+                        <div className="themetask-top-area">
+                            <h2><Skeleton width="160px" height="12px" /></h2>
                         </div>
-                    ))
-                }
-            </Slider>
-        </div>
+                        <div className="themetask-wrapper">
+                            <SkeletonCard />
+                            <SkeletonCard />
+                            <SkeletonCard />
+                            <SkeletonCard />
+                        </div>
+                    </div>
+                    :
+                    <div className="carousel">
+                        <div className="themetask-top-area">
+                            <h2>Popular Album Collection</h2>
+                            <Link to="/categories">
+                                <button className="see-more-btn">See More</button>
+                            </Link>
+                        </div>
+                        {/* react slick slider */}
+                        <Slider {...settings} >
+                            {
+                                themes.map(theme => (
+                                    <div
+                                        className="carousel-item"
+                                        key={theme.id}
+                                        onClick={() => handleCategories(theme.name)}
+                                    >
+                                        <div className="img-area">
+                                            <img src={theme.thumbnail} alt={theme.name} />
+                                        </div>
+
+                                        <div className="text-area">
+                                            <h4>{theme.name}</h4>
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </Slider>
+                    </div>
+            }
+        </>
     );
 };
 

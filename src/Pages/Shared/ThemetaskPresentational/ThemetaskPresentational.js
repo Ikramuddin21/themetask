@@ -5,8 +5,8 @@ import pinterestIcon from '../../../images/pinterest.svg';
 import './ThemetaskPresentational.css';
 
 const ThemetaskPresentational = (props) => {
-    const { preview, avatar, title, image_id,
-        total_download, total_likes, username } = props.theme;
+    const { _id, preview, title,
+        total_download, total_likes, category } = props.theme;
 
     return (
         <div className="theme-presentational">
@@ -19,22 +19,22 @@ const ThemetaskPresentational = (props) => {
                 </div>
 
                 {/* theme image */}
-                <Link to={`/theme-detail/${image_id}`}>
-                    <img src={`https://piktask.com/media_images/images/${preview}`} alt="" />
+                <Link to={`/theme-detail/${category.toLowerCase()}/${_id}`}>
+                    <img src={preview} alt="" />
                 </Link>
             </div>
 
             {/* theme text area */}
             <div className="theme-text-area">
                 {/* theme title */}
-                <Link to={`/theme-detail/${image_id}`}>
+                <Link to={`/theme-detail/${category.toLowerCase()}/${_id}`}>
                     <p className="title"><small>{title.split(" ").splice(0, 5).join(" ")}...</small></p>
                 </Link>
                 {/* theme information */}
                 <div className="info">
                     <div className="profile">
-                        <img src={`https://piktask.com/media_images/${avatar}`} alt="" />
-                        <span>{username}</span>
+                        <img src="https://i.ibb.co/JyYQGM4/preview.png" alt="" />
+                        <span>Themetask</span>
                     </div>
 
                     <div className="score">
@@ -50,7 +50,7 @@ const ThemetaskPresentational = (props) => {
                         </p>
                     </div>
 
-                    <Link to={`/theme-detail/${image_id}`}>
+                    <Link to={`/theme-detail/${category.toLowerCase()}/${_id}`}>
                         <button className="download-btn">Download</button>
                     </Link>
                 </div>

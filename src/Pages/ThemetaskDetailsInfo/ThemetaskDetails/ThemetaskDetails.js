@@ -9,32 +9,64 @@ import './ThemetaskDetails.css';
 import { socialMedia } from '../../../temp/info';
 import RelatedTags from '../RelatedTags/RelatedTags';
 import RelatedProducts from '../RelatedProducts/RelatedProducts';
+import Skeleton from 'react-loading-skeleton';
 
 const ThemetaskDetails = () => {
-    const { image_id } = useParams();
-    const [themeDetails, setThemeDetails] = useState([]);
+    const {category, image_id} = useParams();
+    const [themeDetails, setThemeDetails] = useState({});
 
     useEffect(() => {
-        const url = `https://piktask.com/api/images/${image_id}`;
+        const url = `https://themetask-server.onrender.com/theme-detail/${category}/${image_id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
                 setThemeDetails(data);
             })
-    }, [image_id]);
-
+    }, [category, image_id]);
+    console.log('themeDetails', themeDetails);
     return (
         <>
         {/* theme details */}
+        {
+            !themeDetails.preview ?
         <div className="theme-details">
             <div className="theme-details-left">
-                <img src={`https://piktask.com/media_images/images/${themeDetails?.detail?.preview}`} alt={themeDetails?.detail?.title} />
+              <Skeleton width="720px" height="520px" />
             </div>
 
             <div className="theme-details-right">
-                <h2 className="theme-details-title">{themeDetails?.detail?.title}</h2>
+                <h2 className="theme-details-title"><Skeleton /></h2>
                 <div className="copy-share-area">
-                    <span>{themeDetails?.detail?.creation_ago}</span>
+                    <Skeleton />
+                </div>
+
+                <div className="theme-details-info">
+                   <Skeleton width="300px" height="12px" />
+                </div>
+
+                <div className="user-info">
+                   <Skeleton width="300px" height="12px" />
+                </div>
+
+                <div className="theme-details-media">
+                  <Skeleton width="300px" height="12px" />
+                </div>
+
+                <div className="download-like-btn">
+                 <Skeleton width="300px" height="12px" />
+                </div>
+            </div>
+        </div>
+        :
+        <div className="theme-details">
+            <div className="theme-details-left">
+                <img src={themeDetails?.preview} alt="" />
+            </div>
+
+            <div className="theme-details-right">
+                <h2 className="theme-details-title">{themeDetails?.title}</h2>
+                <div className="copy-share-area">
+                    <span>01-October-2022</span>
                     <button className="theme-details-share">
                         <img src={share} alt="Share icon" />
                         <span>Share</span>
@@ -51,17 +83,17 @@ const ThemetaskDetails = () => {
 
                 <div className="theme-details-info">
                     <div>
-                        <p><strong>Image ID : </strong>{themeDetails?.detail?.id}</p>
-                        <p><strong>File Format : </strong>{themeDetails?.detail?.extension}</p>
+                        <p><strong>Image ID : </strong>{themeDetails?._id}</p>
+                        <p><strong>File Format : </strong>{themeDetails?.extension}</p>
                         <p className="copyright-info">
                             <strong>Copyright Information : </strong>
-                            <span>Piktask</span>
+                            <span>Themetask</span>
                         </p>
                     </div>
 
                     <div className="theme-details-info-right">
-                        <p><strong>Created : </strong>{themeDetails?.detail?.createdAt}</p>
-                        <p><strong>Category : </strong>{themeDetails?.detail?.category?.name}</p>
+                        <p><strong>Created : </strong>Ikram Uddin</p>
+                        <p><strong>Category : </strong>{themeDetails?.category}</p>
                         <p className="authorization-info">
                             <strong>Scope of authorization : </strong>
                             <span>Personal/Enterprise</span>
@@ -70,10 +102,10 @@ const ThemetaskDetails = () => {
                 </div>
 
                 <div className="user-info">
-                    <img src={`https://piktask.com/media_images/${themeDetails?.detail?.user?.avatar}`} alt="" />
+                    <img src="https://i.ibb.co/JyYQGM4/preview.png" alt="" />
                     <div className="user-info-name">
-                        <span className="username-highlight">{themeDetails?.detail?.user?.username}</span>
-                        <span>{themeDetails?.detail?.user?.total_resources} Resources</span>
+                        <span className="username-highlight">Themetask</span>
+                        <span>10 Resources</span>
                     </div>
                     <button className="user-info-follow">Follow</button>
                 </div>
@@ -100,12 +132,13 @@ const ThemetaskDetails = () => {
                 </div>
             </div>
         </div>
+        }
 
         {/* related products components */}
-        <RelatedProducts image_id={image_id} />
+        <RelatedProducts category={category} />
 
         {/* related tags */}
-        <RelatedTags themeDetails={themeDetails?.related_tags} />
+        <RelatedTags />
         </>
     );
 };

@@ -16,6 +16,7 @@ import Category from './Pages/Category/Category';
 import Categories from './Pages/Categories/Categories';
 import { useState } from 'react';
 import Recent from './Pages/Recent/Recent';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 function App() {
   const [modal, setModal] = useState(false);
@@ -32,8 +33,8 @@ function App() {
           <Route path="/category/text-effect" element={<TextEffect />} />
           <Route path="/category/social-media-banner" element={<AllSocialMediaBanner />} />
           <Route path="/category/game" element={<GameAll />} />
-          <Route path="/theme-detail/:image_id" element={<ThemetaskDetails />} />
-          <Route path="/category/:name/:id" element={<Category />} />
+          <Route path="/theme-detail/:category/:image_id" element={<ThemetaskDetails />} />
+          <Route path="/category/:name" element={<Category />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/recent/new-design" element={<Recent />} />
           <Route path="*" element={<NotFound />} />

@@ -1,25 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { popularSearch } from '../../../temp/info';
 import './Hero.css';
 
 const Hero = () => {
 
-    const [popularSearch, setPopularSearch] = useState([]);
-    const [resources, setResources] = useState([]);
     const [showResources, setShowResources] = useState(false);
     const [popular, setPopular] = useState(true);
-
-    useEffect(() => {
-        fetch("https://piktask.com/api/client/search/popular_keyword?limit=10")
-            .then(res => res.json())
-            .then(data => setPopularSearch(data.keywords))
-    }, []);
-
-    useEffect(() => {
-        fetch("https://piktask.com/api/categories?limit=50")
-            .then(res => res.json())
-            .then(data => setResources(data.categories))
-    }, []);
 
     // show resources false
     useEffect(() => {
@@ -49,7 +36,7 @@ const Hero = () => {
                         <div className={`resources ${showResources ? "isShow" : ""}`}>
                             <ul>
                                 {
-                                    resources.map(resource => <li key={resource.id}>{resource.name}</li>)
+                                    popularSearch.map((resource, index) => <li key={index}>{resource}</li>)
                                 }
                             </ul>
                         </div>

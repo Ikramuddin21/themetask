@@ -6,17 +6,17 @@ const AllCategory = (props) => {
 
     const navigate = useNavigate();
 
-    const {id, slug, thumbnail, name} = props.category;
+    const {thumbnail, name} = props.category;
 
     // handle category
     const handleCategory = () => {
-        navigate(`/category/${slug}/${id}`);
+        navigate(`/category/${name.toLowerCase()}`);
     };
 
     return (
         <div className="allCategory" onClick={handleCategory}>
             <div className="allCategory-img-area">
-                <img src={`https://piktask.com/media_images/categories/${thumbnail}`} alt="" />
+                <img src={thumbnail} alt="" />
             </div>
 
             <div className="allCategory-text-area">

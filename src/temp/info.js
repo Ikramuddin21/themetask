@@ -1,11 +1,14 @@
 export const socialMedia = [
-    "https://piktask.com/static/media/behance.5359d0be.svg",
-    "https://piktask.com/static/media/instagram.e6076efd.svg",
-    "https://piktask.com/static/media/facebook.637b20f6.svg",
-    "https://piktask.com/static/media/pintarest.d60a0afb.svg",
-    "https://piktask.com/static/media/linkdin.6035bad6.svg",
-    "https://piktask.com/static/media/dribble.fb098bfb.svg",
-    "https://piktask.com/static/media/youtube.a1e6ca33.svg"
+    "https://i.ibb.co/4sV548v/facebook.png",
+    "https://i.ibb.co/mTXk5tN/dribbble.png",
+    "https://i.ibb.co/dGxv5Fh/instagram.png",
+    "https://i.ibb.co/MhRzsSK/linkedin.png",
+    "https://i.ibb.co/n8vdfJ1/twitter.png",
+    "https://i.ibb.co/KNj5fF1/behance.png"
+];
+
+export const popularSearch = [
+    "Graphics", "Nature", "Social", "Game", "Sports", "Cart", "Text", "Business Card", "Education"
 ];
 
 export const footerMenus = {

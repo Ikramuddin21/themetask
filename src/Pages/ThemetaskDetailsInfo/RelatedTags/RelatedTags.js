@@ -1,12 +1,13 @@
 import React from 'react';
+import { popularSearch } from '../../../temp/info';
 import './RelatedTags.css';
 
-const RelatedTags = ({themeDetails}) => {
+const RelatedTags = () => {
     return (
         <div className="tags">
             <h2>Related tags</h2>
             {
-                themeDetails?.map((tag, index) => tag.length > 0 &&  <button key={index}>
+                popularSearch?.map((tag, index) => tag.length > 0 &&  <button key={index}>
                     {tag}
                 </button>)
             }
