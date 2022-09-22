@@ -108,6 +108,7 @@
 
 .keyword {
     margin: 0 4px;
+    display: inline-block;
     cursor: pointer;
 }
 

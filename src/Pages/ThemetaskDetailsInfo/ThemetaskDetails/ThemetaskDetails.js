@@ -23,7 +23,6 @@ const ThemetaskDetails = () => {
                 setThemeDetails(data);
             })
     }, [category, image_id]);
-    console.log('themeDetails', themeDetails);
     return (
         <>
         {/* theme details */}
